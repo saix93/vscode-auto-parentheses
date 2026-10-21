@@ -41,7 +41,7 @@ suite('Auto Parens', () => {
             }),
             vscode.languages.registerSignatureHelpProvider('csharp', { provideSignatureHelp }, '(', ','),
         );
-        await vscode.extensions.getExtension('saix93.csharp-auto-parens')!.activate();
+        await vscode.extensions.getExtension('Saix93.csharp-auto-parens')!.activate();
     });
 
     suiteTeardown(() => providers.forEach(p => p.dispose()));

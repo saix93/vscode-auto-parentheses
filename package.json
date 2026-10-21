@@ -3,7 +3,7 @@
   "displayName": "C# Auto Parens",
   "description": "Adds '()' when a method is accepted from the completion list, except when it is passed as a delegate, subscribed with +=/-= or used inside nameof().",
   "version": "0.1.0",
-  "publisher": "saix93",
+  "publisher": "Saix93",
   "author": "Raúl Torres González",
   "license": "MIT",
   "repository": {
