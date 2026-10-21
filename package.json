@@ -1,0 +1,58 @@
+{
+  "name": "csharp-auto-parens",
+  "displayName": "C# Auto Parens",
+  "description": "Adds '()' when a method is accepted from the completion list, except when it is passed as a delegate, subscribed with +=/-= or used inside nameof().",
+  "version": "0.1.0",
+  "publisher": "saix93",
+  "author": "Raúl Torres González",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saix93/vscode-auto-parentheses.git"
+  },
+  "bugs": {
+    "url": "https://github.com/saix93/vscode-auto-parentheses/issues"
+  },
+  "homepage": "https://github.com/saix93/vscode-auto-parentheses#readme",
+  "engines": {
+    "vscode": "^1.64.0"
+  },
+  "categories": ["Programming Languages", "Other"],
+  "keywords": ["csharp", "c#", "unity", "rider", "completion", "parentheses"],
+  "activationEvents": ["onLanguage:csharp"],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "csharpAutoParens.acceptSuggestion",
+        "title": "C# Auto Parens: Accept Suggestion"
+      }
+    ],
+    "keybindings": [
+      {
+        "key": "enter",
+        "command": "csharpAutoParens.acceptSuggestion",
+        "when": "editorLangId == csharp && acceptSuggestionOnEnter && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && suggestionMakesTextEdit && textInputFocus"
+      },
+      {
+        "key": "tab",
+        "command": "csharpAutoParens.acceptSuggestion",
+        "when": "editorLangId == csharp && suggestWidgetHasFocusedSuggestion && suggestWidgetVisible && textInputFocus && !inlineSuggestionVisible"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "test": "npm run compile && node --test \"out/test/**/*.test.js\"",
+    "package": "vsce package",
+    "deploy": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/vscode": "1.64.0",
+    "@vscode/vsce": "^3.0.0",
+    "typescript": "^5.4.0"
+  }
+}
