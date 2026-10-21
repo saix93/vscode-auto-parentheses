@@ -6,3 +6,5 @@ out/test/**
 **/tsconfig.json
 .editorconfig
 .gitignore
+.vscode-test/**
+.vscode-test.mjs

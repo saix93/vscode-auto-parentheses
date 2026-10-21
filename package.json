@@ -17,9 +17,21 @@
   "engines": {
     "vscode": "^1.64.0"
   },
-  "categories": ["Programming Languages", "Other"],
-  "keywords": ["csharp", "c#", "unity", "rider", "completion", "parentheses"],
-  "activationEvents": ["onLanguage:csharp"],
+  "categories": [
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "csharp",
+    "c#",
+    "unity",
+    "rider",
+    "completion",
+    "parentheses"
+  ],
+  "activationEvents": [
+    "onLanguage:csharp"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
@@ -45,14 +57,20 @@
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
-    "test": "npm run compile && node --test \"out/test/**/*.test.js\"",
+    "test": "npm run compile && npm run test:unit && npm run test:integration",
     "package": "vsce package",
-    "deploy": "vsce publish"
+    "deploy": "vsce publish",
+    "test:unit": "mocha \"out/test/unit/**/*.test.js\"",
+    "test:integration": "vscode-test"
   },
   "devDependencies": {
+    "@types/mocha": "^10.0.10",
     "@types/node": "^20.0.0",
     "@types/vscode": "1.64.0",
+    "@vscode/test-cli": "^0.0.15",
+    "@vscode/test-electron": "^3.1.0",
     "@vscode/vsce": "^3.0.0",
+    "mocha": "^12.0.3",
     "typescript": "^5.4.0"
   }
 }

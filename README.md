@@ -44,9 +44,11 @@ A C# language extension that provides completions and signature help, such as [C
 
 ```sh
 npm install
-npm test          # compile and run the unit tests
+npm test          # compile, then run the unit and integration tests
 npm run package   # build the .vsix
 ```
+
+The integration tests download a separate copy of VS Code into `.vscode-test/` and run inside it.
 
 Press <kbd>F5</kbd> in VS Code to launch an Extension Development Host.
 

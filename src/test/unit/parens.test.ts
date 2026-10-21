@@ -1,6 +1,5 @@
 import * as assert from 'node:assert/strict';
-import { describe, it } from 'node:test';
-import { isDelegateType, parameterType, skipReason } from '../parens';
+import { isDelegateType, parameterType, skipReason } from '../../parens';
 
 describe('parameterType', () => {
     it('removes the parameter name', () => {
